@@ -107,7 +107,9 @@ Top 5 models explored
 |14|LightGbmMulti|0.9389|0.2000|4.0|14|
 |13|LbfgsLogisticRegressionOva|0.9389|0.2218|10.2|13|
 
-## Sentiments_v3.txt
+## Sentiment_v3.txt
+
+![Images/screenshot_v3.png](Images/screenshot_v3.png)
 
 ### start nni training
 
