@@ -32,7 +32,7 @@ namespace SentimentAnalysis_ConsoleApp_v2
                                     .Append(mlContext.Transforms.Concatenate(@"Features", @"comment"))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(@"rating_star", @"rating_star"))      
                                     .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(l1Regularization:0.03125F,l2Regularization:0.109673707951244F,labelColumnName:@"rating_star",featureColumnName:@"Features"))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(l1Regularization:0.0497089937635079F,l2Regularization:0.186688548841942F,labelColumnName:@"rating_star",featureColumnName:@"Features"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(@"PredictedLabel", @"PredictedLabel"));
 
             return pipeline;
