@@ -8,61 +8,65 @@ using System.Collections.Generic;
 
 namespace SentimentAnalysis_ConsoleApp_v1
 {
-    public partial class SentimentAnalysisModel
-    {
-        /// <summary>
-        /// model input class for SentimentAnalysisModel.
-        /// </summary>
-        #region model input class
-        public class ModelInput
-        {
-            [ColumnName(@"userid")]
-            public float Userid { get; set; }
+	public partial class SentimentAnalysisModel
+	{
+		/// <summary>
+		/// model input class for SentimentAnalysisModel.
+		/// </summary>
+		#region model input class
+		public class ModelInput
+		{
+			[ColumnName(@"userid")]
+			public float Userid { get; set; }
 
-            [ColumnName(@"mtime")]
-            public string Mtime { get; set; }
+			[ColumnName(@"mtime")]
+			public string Mtime { get; set; }
 
-            [ColumnName(@"rating_star")]
-            public float Rating_star { get; set; }
+			[ColumnName(@"rating_star")]
+			public float Rating_star { get; set; }
 
-            [ColumnName(@"comment")]
-            public string Comment { get; set; }
+			[ColumnName(@"comment")]
+			public string Comment { get; set; }
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        /// <summary>
-        /// model output class for SentimentAnalysisModel.
-        /// </summary>
-        #region model output class
-        public class ModelOutput
-        {
-            [ColumnName("PredictedLabel")]
-            public float Prediction { get; set; }
+		/// <summary>
+		/// model output class for SentimentAnalysisModel.
+		/// </summary>
+		#region model output class
+		public class ModelOutput
+		{
+			[ColumnName("PredictedLabel")]
+			public float Prediction { get; set; }
 
-            public float[] Score { get; set; }
-        }
+			public float[] Score { get; set; }
+		}
 
-        #endregion
+		#endregion
 
-        private static string MLNetModelPath = Path.GetFullPath("SentimentAnalysisModel.zip");
+		private string MLNetModelPath = Path.GetFullPath("SentimentAnalysisModel.zip");
+		private PredictionEngine<ModelInput, ModelOutput> predEngine;
+		private MLContext mlContext;
 
-        /// <summary>
-        /// Use this method to predict on <see cref="ModelInput"/>.
-        /// </summary>
-        /// <param name="input">model input.</param>
-        /// <returns><seealso cref=" ModelOutput"/></returns>
-        public static ModelOutput Predict(ModelInput input)
-        {
-            MLContext mlContext = new MLContext();
+		public SentimentAnalysisModel()
+		{
+			mlContext = new MLContext();
+			// Load model & create prediction engine
+			ITransformer mlModel = mlContext.Model.Load(MLNetModelPath, out var modelInputSchema);
+			predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
+		}
 
-            // Load model & create prediction engine
-            ITransformer mlModel = mlContext.Model.Load(MLNetModelPath, out var modelInputSchema);
-            var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
-
-            ModelOutput result = predEngine.Predict(input);
-            return result;
-        }
-    }
+		/// <summary>
+		/// Use this method to predict on <see cref="ModelInput"/>.
+		/// </summary>
+		/// <param name="input">model input.</param>
+		/// <returns><seealso cref=" ModelOutput"/></returns>
+		public ModelOutput Predict(ModelInput input)
+		{
+			ModelOutput result = predEngine.Predict(input);
+			return result;
+		}
+	}
 }

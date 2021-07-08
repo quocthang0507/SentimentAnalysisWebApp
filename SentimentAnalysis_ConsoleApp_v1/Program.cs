@@ -5,28 +5,33 @@ using System;
 
 namespace SentimentAnalysis_ConsoleApp_v1
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Create single instance of sample data from first line of dataset for model input
-            SentimentAnalysisModel.ModelInput sampleData = new SentimentAnalysisModel.ModelInput()
-            {
-                Comment = @"Đồ giống hình, nhìn khá xinh, giá rẻ, ship siêu nhanh luôn. Chưa dùng thử nên chưa biết thế nào",
-            };
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.OutputEncoding = System.Text.Encoding.UTF8;
+			SentimentAnalysisModel model = new SentimentAnalysisModel();
+			do
+			{
+				Console.Write("\nEnter your comment: ");
+				string userinput = Console.ReadLine();
+				// Create single instance of sample data from first line of dataset for model input
+				SentimentAnalysisModel.ModelInput sampleData = new SentimentAnalysisModel.ModelInput()
+				{
+					Comment = userinput,
+				};
+				Console.WriteLine("Please wait...");
+				// Make a single prediction on the sample data and print results
+				var predictionResult = model.Predict(sampleData);
 
-            // Make a single prediction on the sample data and print results
-            var predictionResult = SentimentAnalysisModel.Predict(sampleData);
+				Console.WriteLine($"Predicted Rating_star: {predictionResult.Prediction}");
 
-            Console.WriteLine("Using model to make single prediction -- Comparing actual Rating_star with predicted Rating_star from sample data...\n\n");
+				Console.Write("Press any key to continue, press Esc to exit");
+				var keyInfo = Console.ReadKey();
+				if (keyInfo.Key == ConsoleKey.Escape)
+					break;
+			} while (true);
 
-
-            Console.WriteLine($"Comment: {sampleData.Comment}");
-
-
-            Console.WriteLine($"\n\nPredicted Rating_star: {predictionResult.Prediction}\n\n");
-            Console.WriteLine("=============== End of process, hit any key to finish ===============");
-            Console.ReadKey();
-        }
-    }
+		}
+	}
 }
