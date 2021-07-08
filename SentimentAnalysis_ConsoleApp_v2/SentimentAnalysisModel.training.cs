@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML.Data;
-using Microsoft.ML.Trainers.FastTree;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
@@ -32,7 +31,8 @@ namespace SentimentAnalysis_ConsoleApp_v2
             var pipeline = mlContext.Transforms.Text.FeaturizeText(@"comment", @"comment")      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", @"comment"))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(@"rating_star", @"rating_star"))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastForest(new FastForestBinaryTrainer.Options(){NumberOfTrees=10,FeatureFraction=0.884614076487074F,LabelColumnName=@"rating_star",FeatureColumnName=@"Features"}), labelColumnName: @"rating_star"))      
+                                    .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(l1Regularization:0.03125F,l2Regularization:0.109673707951244F,labelColumnName:@"rating_star",featureColumnName:@"Features"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(@"PredictedLabel", @"PredictedLabel"));
 
             return pipeline;
