@@ -1,0 +1,64 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 10,
+  "Scenario": {
+    "ScenarioType": "Classification"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FilePath": "D:\\Github\\GetShopeeReviews\\sentiments.txt",
+    "Delimiter": "\t",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "userid",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "mtime",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "rating_star",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "comment",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "SdcaLogisticRegressionOva",
+        "Score": 0.86194794943464359,
+        "RuntimeInSeconds": 3.440000057220459
+      },
+      {
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.86194794943464359,
+        "RuntimeInSeconds": 2.1700000762939453
+      },
+      {
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.86194794943464359,
+        "RuntimeInSeconds": 2.2070000171661377
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"comment\"],\"Outputs\":[\"comment\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"comment\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"rating_star\"],\"Outputs\":[\"rating_star\"]},{\"EstimatorType\":\"NormalizeMinMax\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"rating_star\",\"FeatureColumnName\":\"Features\",\"L1Regularization\":\"7.05052757949445\",\"L2Regularization\":\"0.843379941908287\",\"EstimatorType\":\"SdcaMaximumEntropyMulti\",\"Inputs\":[\"rating_star\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapKeyToValue\",\"Inputs\":[\"PredictedLabel\"],\"Outputs\":[\"PredictedLabel\"]}]",
+    "MetricName": "MicroAccuracy"
+  }
+}
