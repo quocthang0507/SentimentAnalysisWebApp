@@ -6,7 +6,7 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 
-namespace SentimentAnalysis_ConsoleApp_v1
+namespace SentimentAnalysis_ConsoleApp_v2
 {
     public partial class SentimentAnalysisModel
     {

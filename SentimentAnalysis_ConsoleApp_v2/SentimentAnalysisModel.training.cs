@@ -9,7 +9,7 @@ using Microsoft.ML.Trainers.FastTree;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
-namespace SentimentAnalysis_ConsoleApp_v1
+namespace SentimentAnalysis_ConsoleApp_v2
 {
     public partial class SentimentAnalysisModel
     {
