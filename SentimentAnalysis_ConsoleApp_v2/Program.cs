@@ -5,33 +5,28 @@ using System;
 
 namespace SentimentAnalysis_ConsoleApp_v2
 {
-    class Program
-    {
+	class Program
+	{
 		static void Main(string[] args)
 		{
-			Console.OutputEncoding = System.Text.Encoding.UTF8;
-			SentimentAnalysisModel model = new SentimentAnalysisModel();
-			do
+			// Create single instance of sample data from first line of dataset for model input
+			SentimentAnalysisModel.ModelInput sampleData = new SentimentAnalysisModel.ModelInput()
 			{
-				Console.Write("\nEnter your comment: ");
-				string userinput = Console.ReadLine();
-				// Create single instance of sample data from first line of dataset for model input
-				SentimentAnalysisModel.ModelInput sampleData = new SentimentAnalysisModel.ModelInput()
-				{
-					Comment = userinput,
-				};
-				Console.WriteLine("Please wait...");
-				// Make a single prediction on the sample data and print results
-				var predictionResult = model.Predict(sampleData);
+				Comment = @"Đồ giống hình, nhìn khá xinh, giá rẻ, ship siêu nhanh luôn. Chưa dùng thử nên chưa biết thế nào",
+			};
 
-				Console.WriteLine($"Predicted Rating_star: {predictionResult.Prediction}");
+			// Make a single prediction on the sample data and print results
+			var predictionResult = SentimentAnalysisModel.Predict(sampleData);
 
-				Console.Write("Press any key to continue, press Esc to exit");
-				var keyInfo = Console.ReadKey();
-				if (keyInfo.Key == ConsoleKey.Escape)
-					break;
-			} while (true);
+			Console.WriteLine("Using model to make single prediction -- Comparing actual Col2 with predicted Col2 from sample data...\n\n");
 
+
+			Console.WriteLine($"Col3: {sampleData.Comment}");
+
+
+			Console.WriteLine($"\n\nPredicted Col2: {predictionResult.Prediction}\n\n");
+			Console.WriteLine("=============== End of process, hit any key to finish ===============");
+			Console.ReadKey();
 		}
 	}
 }
