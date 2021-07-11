@@ -2,6 +2,14 @@
 
 ## Sentiment_v1.txt
 
+|rating_star|count|
+|---|---|
+|1|14|
+|2|3|
+|3|16|
+|4|21|
+|5|330|
+
 ![Images/screenshot_v1.png](Images/screenshot_v1.png)
 
 ### start nni training
@@ -65,6 +73,14 @@ Top 5 models explored
 
 ## Sentiment_v2.txt
 
+|rating_star|count|
+|---|---|
+|1|87|
+|2|88|
+|3|222|
+|4|401|
+|5|9449|
+
 ![Images/screenshot_v2.png](Images/screenshot_v2.png)
 
 ### start nni training
@@ -108,6 +124,14 @@ Top 5 models explored
 |13|LbfgsLogisticRegressionOva|0.9389|0.2218|10.2|13|
 
 ## Sentiment_v3.txt
+
+|rating_star|count|
+|---|---|
+|1|655|
+|2|477|
+|3|1288|
+|4|3584|
+|5|142234|
 
 ![Images/screenshot_v3.png](Images/screenshot_v3.png)
 
@@ -215,6 +239,14 @@ Top 5 models explored
 
 ## Sentiment_v4.txt
 
+|rating_star|count|
+|---|---|
+|1|8997|
+|2|6160|
+|3|17838|
+|4|42438|
+|5|184987|
+
 ![Images/screenshot_v4.png](Images/screenshot_v4.png)
 
 ### start nni training
@@ -289,6 +321,14 @@ Top 5 models explored
 |27|LbfgsMaximumEntropyMulti|0.7233|0.2203|35.8|27|
 
 ## Sentiment_v5.txt
+
+|rating_star|count|
+|---|---|
+|1|28156|
+|2|18739|
+|3|49644|
+|4|117226|
+|5|196932|
 
 ![Images/screenshot_v5.png](Images/screenshot_v5.png)
 
