@@ -370,8 +370,8 @@ Top 5 models explored
 Top 5 models explored
 ||Trainer|MicroAccuracy|MacroAccuracy|Duration|#Iteration|
 |---|---|---|---|---|---|
-|55 LbfgsMaximumEntropyMulti0.5005 0.217252.1 55|
-|54 LbfgsMaximumEntropyMulti0.4974 0.215126.3 54|
-|53 LbfgsMaximumEntropyMulti0.4963 0.213322.1 53|
-|52 LbfgsMaximumEntropyMulti0.4960 0.213120.2 52|
-|51 LbfgsMaximumEntropyMulti0.4894 0.2054 9.1 51|
+|55|LbfgsMaximumEntropyMulti|0.5005|0.2172|52.1|55|
+|54|LbfgsMaximumEntropyMulti|0.4974|0.2151|26.3|54|
+|53|LbfgsMaximumEntropyMulti|0.4963|0.2133|22.1|53|
+|52|LbfgsMaximumEntropyMulti|0.4960|0.2131|20.2|52|
+|51|LbfgsMaximumEntropyMulti|0.4894|0.2054| 9.1|51|
