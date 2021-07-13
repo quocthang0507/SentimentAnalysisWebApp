@@ -1,6 +1,6 @@
 # SentimentAnalysisWebapp
 
-## Sentiment_v1.txt
+## Sentiments_v1.txt
 
 |rating_star|count|
 |---|---|
@@ -71,7 +71,7 @@ Top 5 models explored
 |1|SdcaLogisticRegressionOva|0.8559|0.2733|3.3|1|
 ------------------------------------------------------------------------------------------------------------------
 
-## Sentiment_v2.txt
+## Sentiments_v2.txt
 
 |rating_star|count|
 |---|---|
@@ -123,7 +123,7 @@ Top 5 models explored
 |14|LightGbmMulti|0.9389|0.2000|4.0|14|
 |13|LbfgsLogisticRegressionOva|0.9389|0.2218|10.2|13|
 
-## Sentiment_v3.txt
+## Sentiments_v3.txt
 
 |rating_star|count|
 |---|---|
@@ -237,7 +237,7 @@ Top 5 models explored
 |32|SdcaMaximumEntropyMulti|0.9582|0.2000|4.4|32|
 |23|SdcaLogisticRegressionOva|0.9582|0.2000|9.2|23|
 
-## Sentiment_v4.txt
+## Sentiments_v4.txt
 
 |rating_star|count|
 |---|---|
@@ -320,7 +320,7 @@ Top 5 models explored
 |22|LbfgsMaximumEntropyMulti|0.7239|0.2188|19.8|22|
 |27|LbfgsMaximumEntropyMulti|0.7233|0.2203|35.8|27|
 
-## Sentiment_v5.txt
+## Sentiments_v5.txt
 
 |rating_star|count|
 |---|---|
@@ -414,4 +414,95 @@ Top 5 models explored
 |54|LbfgsMaximumEntropyMulti|0.4974|0.2151|26.3|54|
 |53|LbfgsMaximumEntropyMulti|0.4963|0.2133|22.1|53|
 |52|LbfgsMaximumEntropyMulti|0.4960|0.2131|20.2|52|
-|51|LbfgsMaximumEntropyMulti|0.4894|0.2054| 9.1|51|
+|51|LbfgsMaximumEntropyMulti|0.4894|0.2054|9.1|51|
+
+## Sentiments_sg_v1.txt
+
+### start nni training
+
+||Trainer|MicroAccuracy|MacroAccuracy|Duration|#Iteration|
+|---|---|---|---|---|---|
+|1|SdcaMaximumEntropyMulti|0.7485|0.2000|4.1|1|
+|2|LbfgsMaximumEntropyMulti|0.7520|0.2187|4.9|2|
+|3|FastTreeOva|0.7493|0.2151|8.1|3|
+|4|SdcaMaximumEntropyMulti|0.7485|0.2000|3.2|4|
+|5|SdcaLogisticRegressionOva|0.7485|0.2000|8.6|5|
+|6|SdcaMaximumEntropyMulti|0.7485|0.2000|3.1|6|
+|7|SdcaMaximumEntropyMulti|0.7485|0.2000|3.1|7|
+|8|SdcaLogisticRegressionOva|0.7485|0.2000|13.5|8|
+|9|LbfgsLogisticRegressionOva|0.7539|0.2301|7.8|9|
+|10|LightGbmMulti|0.7507|0.2173|5.5|10|
+|11|LbfgsLogisticRegressionOva|0.7552|0.2334|11.7|11|
+|12|LbfgsLogisticRegressionOva|0.7546|0.2457|16.0|12|
+|13|LbfgsMaximumEntropyMulti|0.7498|0.2036|7.7|13|
+|14|FastForestOva|0.7505|0.2271|16.9|14|
+|15|SdcaMaximumEntropyMulti|0.7485|0.2000|4.3|15|
+|16|LbfgsLogisticRegressionOva|0.7527|0.2158|9.7|16|
+|17|LbfgsLogisticRegressionOva|0.7547|0.2468|13.3|17|
+|18|LbfgsLogisticRegressionOva|0.7530|0.2181|11.2|18|
+|19|SdcaLogisticRegressionOva|0.7485|0.2000|8.8|19|
+|20|LbfgsMaximumEntropyMulti|0.7512|0.2120|4.6|20|
+|21|SdcaMaximumEntropyMulti|0.7485|0.2000|3.0|21|
+|22|FastTreeOva|0.7485|0.2000|7.1|22|
+|23|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|23|
+|24|SdcaLogisticRegressionOva|0.7485|0.2000|13.9|24|
+|25|FastForestOva|0.7503|0.2247|14.9|25|
+|26|LbfgsMaximumEntropyMulti|0.7506|0.2112|5.6|26|
+|27|SdcaMaximumEntropyMulti|0.7485|0.2000|3.6|27|
+|28|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|28|
+|29|SdcaMaximumEntropyMulti|0.7485|0.2000|3.3|29|
+|30|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|30|
+|31|SdcaLogisticRegressionOva|0.7485|0.2000|9.3|31|
+|32|SdcaMaximumEntropyMulti|0.7485|0.2000|3.5|32|
+|33|SdcaMaximumEntropyMulti|0.7485|0.2000|3.6|33|
+|34|SdcaLogisticRegressionOva|0.7485|0.2000|9.3|34|
+|35|SdcaMaximumEntropyMulti|0.7485|0.2000|3.2|35|
+|36|LbfgsMaximumEntropyMulti|0.7525|0.2199|6.5|36|
+|37|FastTreeOva|0.7364|0.2422|23.2|37|
+|38|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|38|
+|39|LightGbmMulti|0.7360|0.2210|4.5|39|
+|40|SdcaMaximumEntropyMulti|0.7485|0.2000|3.2|40|
+|41|LbfgsLogisticRegressionOva|0.7566|0.2509|21.0|41|
+|42|SdcaMaximumEntropyMulti|0.7485|0.2000|3.1|42|
+|43|LbfgsLogisticRegressionOva|0.7546|0.2493|14.9|43|
+|44|LbfgsMaximumEntropyMulti|0.7536|0.2217|8.9|44|
+|45|SdcaLogisticRegressionOva|0.7485|0.2000|13.4|45|
+|46|SdcaMaximumEntropyMulti|0.7485|0.2000|3.1|46|
+|47|SdcaMaximumEntropyMulti|0.7485|0.2000|3.3|47|
+|48|LbfgsMaximumEntropyMulti|0.7558|0.2353|17.9|48|
+|49|SdcaLogisticRegressionOva|0.7485|0.2000|14.6|49|
+|50|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|50|
+|51|LbfgsMaximumEntropyMulti|0.7555|0.2305|18.7|51|
+|52|SdcaLogisticRegressionOva|0.7485|0.2000|8.8|52|
+|53|SdcaMaximumEntropyMulti|0.7485|0.2000|3.7|53|
+|54|LbfgsMaximumEntropyMulti|0.7561|0.2463|18.2|54|
+|55|LbfgsMaximumEntropyMulti|0.7549|0.2294|26.7|55|
+|56|SdcaLogisticRegressionOva|0.7485|0.2000|8.7|56|
+|57|SdcaLogisticRegressionOva|0.7485|0.2000|11.0|57|
+|58|LbfgsMaximumEntropyMulti|0.7538|0.2330|13.1|58|
+|59|SdcaMaximumEntropyMulti|0.7485|0.2000|3.3|59|
+|60|SdcaMaximumEntropyMulti|0.7485|0.2000|3.3|60|
+|61|FastForestOva|0.7524|0.2354|26.1|61|
+|62|LbfgsLogisticRegressionOva|0.7571|0.2437|21.3|62|
+|63|LbfgsLogisticRegressionOva|0.7554|0.2314|18.1|63|
+|64|SdcaLogisticRegressionOva|0.7485|0.2000|8.9|64|
+|65|SdcaMaximumEntropyMulti|0.7485|0.2000|2.9|65|
+
+### Experiment Results
+
+|Summary|
+|---|
+|ML Task: Classification|
+|Dataset: D:\Github\GetShopeeReviews\sentiments_sg.txt|
+|Label : rating_star|
+|Total experiment time : 591.30 Secs|
+|Total number of models explored: 65|
+
+Top 5 models explored
+||Trainer|MicroAccuracy|MacroAccuracy|Duration|#Iteration|
+|---|---|---|---|---|---|
+|61|LbfgsLogisticRegressionOva|0.7571|0.2437|21.3|61|
+|40|LbfgsLogisticRegressionOva|0.7566|0.2509|21.0|40|
+|53|LbfgsMaximumEntropyMulti|0.7561|0.2463|18.2|53|
+|47|LbfgsMaximumEntropyMulti|0.7558|0.2353|17.9|47|
+|50|LbfgsMaximumEntropyMulti|0.7555|0.2305|18.7|50|

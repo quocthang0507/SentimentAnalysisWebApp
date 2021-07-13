@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysis_ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysis_ConsoleApp_v4", "SentimentAnalysis_ConsoleApp_v4\SentimentAnalysis_ConsoleApp_v4.csproj", "{4572A272-A120-487A-B0EC-7CAAD21D5C43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentAnalysis_ConsoleApp_v5", "SentimentAnalysis_ConsoleApp_v5\SentimentAnalysis_ConsoleApp_v5.csproj", "{4FE2F993-4E3D-49CD-81E2-B4A50676969B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysis_ConsoleApp_v5", "SentimentAnalysis_ConsoleApp_v5\SentimentAnalysis_ConsoleApp_v5.csproj", "{4FE2F993-4E3D-49CD-81E2-B4A50676969B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishSentimentAnalysis_ConsoleApp_v1", "EnglishSentimentAnalysis_ConsoleApp_v1\EnglishSentimentAnalysis_ConsoleApp_v1.csproj", "{1923EEE2-588A-4CBA-BE7A-29B19FA98E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4FE2F993-4E3D-49CD-81E2-B4A50676969B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FE2F993-4E3D-49CD-81E2-B4A50676969B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FE2F993-4E3D-49CD-81E2-B4A50676969B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1923EEE2-588A-4CBA-BE7A-29B19FA98E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1923EEE2-588A-4CBA-BE7A-29B19FA98E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1923EEE2-588A-4CBA-BE7A-29B19FA98E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1923EEE2-588A-4CBA-BE7A-29B19FA98E59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
